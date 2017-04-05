@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+
 import java.util.Locale;
 
 import butterknife.BindView;
@@ -101,12 +103,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void shareOption() {
-        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-        sharingIntent.setType("text/plain");
-        String shareMessage="Hi! That's my BMI:";
-        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "My BMI");
-        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareMessage);
-        startActivity(Intent.createChooser(sharingIntent, "Share via"));
+        String stringBMIValue = valueBMI.getText().toString();
+        if(!stringBMIValue.equals("")){
+            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            String shareMessage = "Hi! That's my BMI: " + stringBMIValue;
+
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "My BMI");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareMessage);
+            startActivity(Intent.createChooser(sharingIntent, "Share via"));
+        }
+        else {
+            Toast.makeText(this, "First you have to calculate your BMI", Toast.LENGTH_SHORT).show();
+        }
+
+
     }
 
     private void saveYourData() {
@@ -118,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         editSavedData.putFloat("weight",weight);
         editSavedData.putFloat("height",height);
         editSavedData.apply();
-        Toast.makeText(this, "Your data is saved."+weight+"||"+height, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -183,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
             height*=0.0254;
         }
         if(weight<0 || height<0){
-            Toast.makeText(this, "The information you provided is invalid", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please specify weight and height", Toast.LENGTH_SHORT).show();
             return false;
         }
         else if(height>3 && meterFlag){

@@ -10,33 +10,38 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="15dp"
         android:text="@string/author"
         android:textSize="18sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="275dp"
-        tools:layout_editor_absoluteY="477dp" />
+        tools:layout_editor_absoluteY="477dp"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/profil" />
+        app:srcCompat="@drawable/profil"
+        android:layout_marginRight="130dp"
+        android:layout_marginEnd="130dp"
+        android:layout_alignTop="@+id/imageView3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="19dp"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/icon_bmi" />
+        app:srcCompat="@drawable/icon_bmi"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="130dp"
+        android:layout_marginStart="130dp" />
 
 </RelativeLayout>
