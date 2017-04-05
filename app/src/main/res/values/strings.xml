@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BMIapp</string>
+    <string name="text1">HEIGHT:</string>
+    <string name="text2">MASS:</string>
+    <string name="text3">SHOW MY BMI</string>
+    <string name="textBMI">BMI:</string>
+    <string name="author">Author of this app: Michał Krause</string>
+
+
+</resources>
